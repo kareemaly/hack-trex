@@ -5,5 +5,6 @@ module.exports = {
 	output: {
 		filename: 'injected_trex.js',
 		path: path.resolve(__dirname, '../'),
-	}
+	},
+	mode: 'development',
 }
