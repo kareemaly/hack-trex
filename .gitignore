@@ -32,3 +32,5 @@ node_modules/
 *.vim
 
 env
+injected_trex.js
+__pycache__/
