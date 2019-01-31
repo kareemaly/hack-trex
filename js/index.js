@@ -16,11 +16,14 @@ socket.on('execute_command', (command) => {
 			dispatchKeyboardEvent(40);
 			break;
 	}
+
+	sendScreenshot();
 })
 
-setInterval(() => {
+const sendScreenshot = () => {
 	const element = document.getElementsByClassName('runner-canvas')[0];
 	const screenshot = element.toDataURL();
 	socket.emit('send_screenshot', screenshot);
-}, 1000);
+}
 
+sendScreenshot();

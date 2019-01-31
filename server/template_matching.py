@@ -37,6 +37,8 @@ def get_game_state(base64_screenshot):
 	trex = get_cropped_piece(pieces, 1678, 0, 87, 87)
 
 	obstacles = [
+		get_cropped_piece(pieces, 260, 15, 92, 65),
+		get_cropped_piece(pieces, 260+92, 5, 90, 55),
 		get_cropped_piece(pieces, 652, 0, 50, 80),
 		get_cropped_piece(pieces, 652 + 50, 0, 50, 80),
 		get_cropped_piece(pieces, 652 + 100, 0, 50, 80),
@@ -55,6 +57,6 @@ def get_game_state(base64_screenshot):
 	obstacle_locations = list({ o['top_left']:o for o in obstacle_locations }.values())
 
 	return {
-		'trex_location': trex_location,
+		'trex_location': trex_location[0] if len(trex_location) > 0 else None,
 		'obstacle_locations': obstacle_locations,
 	}
